@@ -15,14 +15,11 @@
 </head>
 
 <body>
-
     <div>
-        <button onclick="button()" class="buttonBurger" id="name"> Cheeseburger</button>
+        <button class="buttonBurger"  onclick="buttonCheesburger('10')"> Cheeseburger</button>
         <div id="price">10 €</div>
-        
         <br> <br>
-        
-        <button class="buttonBurger"> Pommes</button>
+        <button class="buttonBurger" onclick="buttonPommes()"> Pommes</button>
         <div id="price"> 5 € </div>
 
     </div>
@@ -30,21 +27,22 @@
     <script>
 
         let shoppingBasket = [];
-        let prices = ['10','5'];
-        let names = ['Cheeseburger','Pommes'];
+        
+        let prices = [];
+        let names = [];
 
-        function addToBasket(name, price) {
-            names.push(name);
-
-            prices.push(price);
-
-            document.getElementById('warenkorbID')
+        function buttonCheesburger(price) {
+            addToBasket(price);
+            updateBasket();
         }
 
-        function button (){
-            document.getElementById('warenkorbID').innerHTML = `Cheesburger`;
+        function addToBasket(price) {
+            shoppingBasket.push(price);
+        }
 
-
+        function updateBasket() {
+            document.getElementById('warenkorbID').innerHTML = "";
+            document.getElementById('warenkorbID').innerHTML += `<li>${shoppingBasket} </li>`;
         }
 
     </script>
@@ -53,9 +51,8 @@
     <div>
         <h1>Warenkorb:</h1>
     </div>
-
     <div id="warenkorbID">
-        "Warenkorb Platz"
+
     </div>
 
 
