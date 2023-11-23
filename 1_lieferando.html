@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="1_lieferando.js"> </script>
 
     <style>
         .buttonBurger {
             height: 100px;
         }
     </style>
-
 </head>
 
-<body>
+<body onload="render()">
     <div>
-        <button class="buttonBurger"  onclick="buttonCheesburger('10')"> Cheeseburger</button>
+        <button class="buttonBurger" onclick="button()"> Cheeseburger</button>
         <div id="price">10 €</div>
         <br> <br>
         <button class="buttonBurger" onclick="buttonPommes()"> Pommes</button>
@@ -24,37 +24,13 @@
 
     </div>
 
-    <script>
-
-        let shoppingBasket = [];
-        
-        let prices = [];
-        let names = [];
-
-        function buttonCheesburger(price) {
-            addToBasket(price);
-            updateBasket();
-        }
-
-        function addToBasket(price) {
-            shoppingBasket.push(price);
-        }
-
-        function updateBasket() {
-            document.getElementById('warenkorbID').innerHTML = "";
-            document.getElementById('warenkorbID').innerHTML += `<li>${shoppingBasket} </li>`;
-        }
-
-    </script>
-
     <br><br><br><br>
     <div>
         <h1>Warenkorb:</h1>
     </div>
+
     <div id="warenkorbID">
-
     </div>
-
 
 </body>
 
