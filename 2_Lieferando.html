@@ -14,15 +14,15 @@
     </style>
 </head>
 
-<body onload="render()">
+<body>
     <div>
-        <button class="buttonBurger" onclick="food()"> Cheeseburger</button>
+        <button class="buttonBurger" onclick="food(0)"> Cheeseburger</button>
         <div id="price">10 €</div>
         <br> <br>
-        <button class="buttonBurger"> Pommes</button>
+        <button class="buttonBurger" onclick="food(1)"> Pommes</button>
         <div id="price"> 5 € </div>
         <br> <br>
-        <button class="buttonBurger"> Carbonara</button>
+        <button class="buttonBurger" onclick="food(2)"> Carbonara</button>
         <div id="price"> 30 € </div>
 
     </div>
@@ -31,7 +31,6 @@
     <div>
         <h1>Warenkorb:</h1>
     </div>
-<!--Test-->
     <div id="warenkorbID">
     </div>
 

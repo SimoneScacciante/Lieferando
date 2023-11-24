@@ -1,15 +1,24 @@
 
-let prices = ['10', '5', '20'];
+let prices = [10, 5, 20];
 let names = ['Cheeseburger', 'Pommes', 'Carbonara'];
-let shoppingCart = [];
 
-function food() {
+let shoppingCartNames = [];
+let shoppingCartPrices = [];
 
-    for (let i = 0; i < prices.length; i++) {
-        const food = document.getElementById('warenkorbID').innerHTML += `
-        ${names[i]} + ${prices[i]}€ <br>
-        `;
+function food(selectedItemIndex) {
+    shoppingCartNames.push(names[selectedItemIndex]);
+    shoppingCartPrices.push(prices[selectedItemIndex]);
+    let basket = document.getElementById("warenkorbID");
+    basket.innerHTML = "";
+
+    for (let shoppingBasketItemIndex = 0; shoppingBasketItemIndex < shoppingCartNames.length; shoppingBasketItemIndex++) {
+        basket.innerHTML += `<div>
+        <span>${shoppingCartNames[shoppingBasketItemIndex]}</span>
+        <span>${shoppingCartPrices[shoppingBasketItemIndex]}</span>
+        </div>`
+        ;
     }
+
 }
 
 
