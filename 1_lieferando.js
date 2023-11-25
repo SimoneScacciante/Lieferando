@@ -1,14 +1,27 @@
 
-let prices = ['10', '5', '20'];
 let names = ['Cheeseburger', 'Pommes', 'Carbonara'];
-let shoppingCart = [];
+let prices = ['10', '5', '20'];
 
-function food() {
+let shoppingCartNames = [];
+let shoppingCartPrices = [];
 
-    for (let i = 0; i < prices.length; i++) {
-        const food = document.getElementById('warenkorbID').innerHTML += `
-        ${names[i]} + ${prices[i]}€ <br>
-        `;
+function food(selectedItemIndex) {
+    shoppingCartNames.push(names[selectedItemIndex]);
+    shoppingCartPrices.push(prices[selectedItemIndex]);
+    renderBasket();
+}
+
+function renderBasket() {
+    let basket = document.getElementById('warenkorbID');
+    basket.innerHTML = "";
+
+    for (let i = 0; i < shoppingCartNames.length; i++) {
+        basket.innerHTML += `
+        <div>
+        <span> ${shoppingCartNames[i]} </span> 
+        <span> ${shoppingCartPrices[i]} </span>
+        </div>        
+        `
     }
 }
 
