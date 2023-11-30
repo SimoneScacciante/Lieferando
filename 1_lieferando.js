@@ -14,7 +14,7 @@ function food(itemIndexFood) {
 
     for (let i = 0; i < shoppingCartNames.length; i++) {
         basket.innerHTML += `
-    ${shoppingCartNames[i]} +     ${shoppingCartPrices[i]}
+    ${shoppingCartNames[i]} + ${shoppingCartPrices[i]}
 
     
     `;

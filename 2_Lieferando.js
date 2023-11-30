@@ -26,7 +26,10 @@ function init() {
         <span>${element['name']} <button onclick="food(${i})">ok</button></span> <br>
         <span>${element['recepte']}</span> <br>
         <span>${element['price']} €</span> <br> <br>
-        </div>`
+        </div>
+        
+        
+        `
             ;
     }
 }

@@ -11,22 +11,33 @@
         .buttonBurger {
             height: 100px;
         }
+
+        .menu-box {
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 600px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-buy {
+            padding-left: 30;
+        }
+
+        .menu-rightside{
+            display: flex;
+            align-items: center;
+            column-gap: 25px;
+        }
+
     </style>
 </head>
 
 <body onload="init()">
-    <div>
-        <button class="buttonBurger"> Cheeseburger</button>
-        <div id="price">10€</div>
-        <br> <br>
-        <button class="buttonBurger"> Pommes</button>
-        <div id="price">5€ </div>
-        <br> <br>
-        <button class="buttonBurger"> Carbonara</button>
-        <div id="price">30€ </div>
-
-    </div>
-
+    
     <br><br><br><br>
     <div>
         <h1>Warenkorb 1:</h1>
@@ -36,11 +47,59 @@
 
     <br><br><br><br>
     <h1>Warenkorb 2:</h1>
-</div>
-<div id="warenkorbID2">
+    </div>
+    <div id="warenkorbID2">
+    </div>
+    
 
+<!-- ------------------------------------------------------------------------------------------------->
+<!-- ------------------------------------------------------------------------------------------------->
+    <!-- DIESER TEIL AB HIER ERFÜLLT KEINE FUNKTION DA NICHT MIT JAVASCRIPT VERKNÜPFT-->
 
-</div>
+    <div class="menu-conatiner">
+        <div class="menu-box">
+            <div>
+                <div>
+                    <h1>Cheeseburger</h1>
+                </div>
+                <div>Gurken, Kàse, Fleischklops</div>
+            </div>
+
+            <div class="menu-rightside">
+                <div><h3>10€</h3></div>
+                <div><button class="buttonBurger"> Kaufen</button></div>
+            </div>
+        </div>
+
+        <div class="menu-box">
+            <div>
+                <div>
+                    <h1>Pommes</h1>
+                </div>
+                <div>Kartoffel, Salz, Ketchup</div>
+            </div>
+
+            <div class="menu-rightside">
+                <div><h3>5€</h3></div>
+                <div><button class="buttonBurger"> Kaufen</button></div>
+            </div>
+        </div>
+
+        <div class="menu-box">
+            <div>
+                <div>
+                    <h1>Currywurst</h1>
+                </div>
+                <div>Wurst, Senf, Brot</div>
+            </div>
+
+            <div class="menu-rightside">
+                <div><h3>20€</h3></div>
+                <div><button class="buttonBurger"> Kaufen</button></div>
+            </div>
+        </div>
+    </div>
+    </div>
 
 </body>
 
