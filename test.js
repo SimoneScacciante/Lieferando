@@ -1,47 +1,59 @@
-let showMenuArray = [
+let foodArray = [
     {
-        "name": "Cheeseburger",
-        "price": 20,
+        'name': 'Cheeseburger',
+        'recepte': ['Zwiebel','Tomate'],
+        'price': 10,
     },
 
     {
-        "name": "Pommes",
-        "price": 5,
+        'name': 'Pommes',
+        'recepte': ['Zwiebel','Tomate'],
+        'price': 5,
+    },
+
+    {
+        'name': 'Pasta',
+        'recepte': ['Zwiebel','Tomate'],
+        'price': 20,
     }
+
+
 ];
 
+let nameArray = [];
+let priceArray = [];
 
-let foodArray = ['Cheeseburger', 'Pommes'];
-let priceArray = ['20', '5'];
 
-let shoppingCartNames = [];
-let shoppingCartPrices = [];
+function init() {
+    let TextHier1 = document.getElementById('TextHier1');
+    TextHier1.innerHTML = "";
 
-function showFood {
-let basketShowFood = document.getElementById('showFoodID').innerHTML;
-basketShowFood.innerHTML = "";
+    for (let i = 0; i < foodArray.length; i++) {
+        const element = foodArray[i];
 
-for (let j = 0; j < array.length; j++) {
-    basketShowFood.innerHTML += `
-    ${showMenuArray['name']}
-    
+        TextHier1.innerHTML += `
+    ${element['name']} + ${element['price']} + ${element['recepte']} <button onclick="addFood(${i})">Kaufen</button><br>
     `
-}
-
-}
-
-
-function food(selectedItems) {
-    shoppingCartNames.push(foodArray[selectedItems]);
-    shoppingCartPrices.push(priceArray[selectedItems]);
-
-    let basket = document.getElementById('basket');
-    basket.innerHTML = "";
-
-    for (let i = 0; i < shoppingCartNames.length; i++) {
-        basket.innerHTML += `
-    ${shoppingCartNames[i]} + ${shoppingCartPrices[i]} <br>
-
-`
     }
 }
+
+function addFood (kaufen) {
+nameArray.push(foodArray[kaufen]['name']);
+priceArray.push(foodArray[kaufen]['price']);
+
+let TextHier2 = document.getElementById('TextHier2');
+TextHier2.innerHTML = "";
+
+for (let j = 0; j < nameArray.length; j++) {
+    TextHier2.innerHTML += `
+    <br>
+    ${nameArray[j]} + ${priceArray[j]} <br>
+    
+    `
+    
+}
+
+}
+
+
+

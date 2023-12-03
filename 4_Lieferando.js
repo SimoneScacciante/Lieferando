@@ -23,37 +23,38 @@ let arrayMenu = [
 ]
 
 function init() {
-    let basket = document.getElementById("foodID");
+    const basket = document.getElementById("foodID");
     basket.innerHTML = "";
 
     for (let i = 0; i < arrayMenu.length; i++) {
-
         const element = arrayMenu[i];
-        basket.innerHTML += `
-        
-    <div class="menu-conatiner">
-        <div class="menu-box">
-            <div>
-                <div>
-                    <h1>${element['name']} </h1>
-                </div>
-                <div>${element['recepte']}</div>
-            </div>
-    
-            <div class="menu-rightside">
-                <div><h3>${element['price']} €</h3></div>
-                <div><button onclick="addFoodBasket(${i})">Kaufen</button></div>
-            </div>
-        </div>
-    </div>
-     `;
+        basket.innerHTML += generateMenuHTML(element, i);
     }
 }
 
+function generateMenuHTML(element, index) {
+    return `
+        <div class="menu-container">
+            <div class="menu-box">
+                <div>
+                    <div>
+                        <h1>${element['name']}</h1>
+                    </div>
+                    <div>${element['recepte']}</div>
+                </div>
+
+                <div class="menu-rightside">
+                    <div><h3>${element['price']} €</h3></div>
+                    <div><button onclick="addFoodBasket(${index})">Kaufen</button></div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+
 
 function addFoodBasket(index) {
-    // sobald du auf Zeile 45 Button Klickst, gelangt 'name' und 'price' von einem (arrayMenu) zu anderen
-    // "noch" leeren Array (shoppingCartNames) und (shoppingCartPrices)
     shoppingCartNames.push(arrayMenu[index]['name'])
     shoppingCartPrices.push(arrayMenu[index]['price'])
 
@@ -62,7 +63,7 @@ function addFoodBasket(index) {
 
     for (let j = 0; j < shoppingCartNames.length; j++) {
         basket_2.innerHTML += `
-        ${shoppingCartNames[j]} + ${shoppingCartPrices[j]} <br>
+        ${shoppingCartNames[j]}  <br>
         `;
     }
 
@@ -77,8 +78,7 @@ function sumOfBasket() {
     let sum = 0;
 
     for (let k = 0; k < shoppingCartPrices.length; k++) {
-        sum += shoppingCartPrices[k] // sum = entspricht ShoppingCartPrices Array beginne mit 0 und zähle 
-                                    // gesamten Inhalt zusammen (addieren)
+        sum += shoppingCartPrices[k] 
 
 
         priceID.innerHTML += `

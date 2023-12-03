@@ -20,12 +20,13 @@ function init() {
     basket.innerHTML = "";
 
     for (let i = 0; i < arrayMenu.length; i++) {
-        const element = arrayMenu[i];
+        // statt wie unten ${arrayMenu[i]} zu schreiben kannst du Variable "const element = arrayMenu[i];" vergeben, Siehe Project 3_Lieferando.js
+
         // ${element['name']} =  IST SELBE WIE = ${arrayMenu[i]['name']}, da nur abgekürzt
         basket.innerHTML += `<div>
-        <span>${element['name']} <button onclick="food(${i})">ok</button></span> <br>
-        <span>${element['recepte']}</span> <br>
-        <span>${element['price']} €</span> <br> <br>
+        <span>${arrayMenu[i]['name']} <button onclick="addFood(${i})">ok</button></span> <br>
+        <span>${arrayMenu[i]['recepte']}</span> <br>
+        <span>${arrayMenu[i]['price']} €</span> <br> <br>
         </div>
         
         
@@ -34,8 +35,8 @@ function init() {
     }
 }
 
-function food(index) {
-    shoppingCartNames.push(arrayMenu[index]['name'])
+function addFood(index) {
+    shoppingCartNames.push(arrayMenu[index]['name']) 
     shoppingCartPrices.push(arrayMenu[index]['price'])
 
     let basket_2 = document.getElementById('warenkorbID2');
