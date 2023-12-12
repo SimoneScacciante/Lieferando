@@ -78,21 +78,11 @@ function sumOfBasket() {
     let sum = 0;
 
     for (let k = 0; k < shoppingCartPrices.length; k++) {
-        sum += shoppingCartPrices[k] 
-
+        sum += shoppingCartPrices[k]; 
 
         priceID.innerHTML += `
         <div>
         Die Summe beträgt ${sum} €
-        </div>
-        `
+        </div>`;
     }
-
-
-
-
 }
-
-
-
-
